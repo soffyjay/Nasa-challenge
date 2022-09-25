@@ -1,0 +1,25 @@
+.home {
+  width: 1600px;
+  margin: auto;
+}
+
+.home-container {
+  width: 95%;
+  margin: auto;
+}
+
+.picture-of-day {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 100%;
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid red;
+}
