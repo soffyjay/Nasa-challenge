@@ -1,5 +1,6 @@
 import * as actions from "./ActionTypes";
 
+//ACTION CREATORS TO SPECIFY WHAT WE WOULD DISPATCH
 const fetchPictureRequest = () => {
   return {
     type: actions.FETCH_PICTURE_REQUEST,
@@ -57,6 +58,7 @@ const fetchSingleMovieFailure = () => {
   };
 };
 
+//Asynchronous actions with redux thunk
 export const fetchMovies = () => {
   return (dispatch) => {
     dispatch(fetchMoviesRequest());

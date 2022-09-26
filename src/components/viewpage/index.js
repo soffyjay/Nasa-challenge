@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
+import "./ViewStyle.css";
 
+//Single movie details page
 const View = () => {
+  //use selector to access global state
   const data = useSelector((state) => state.singleMovie.data);
   return (
-    <div>
+    <div className="view-page">
       <img src={"https://image.tmdb.org/t/p/original/" + data?.poster_path} />
       <h2>Title:{data?.title}</h2>
       <p>Overview:{data?.overview}</p>

@@ -8,12 +8,20 @@ const Card = ({
   releaseDate,
   popularity,
   onClick,
+  moviePoster,
   id,
 }) => {
   return (
-    <div className="card" onClick={onClick} key={id}>
+    <div className="card" onClick={onClick} key={id} data-testid="card">
       <div>
-        <img src={image} className="card-image" />
+        <img
+          src={
+            !moviePoster
+              ? "https://nasa-movies.netlify.app/image/gallery.png"
+              : image
+          }
+          className="card-image"
+        />
         <h2 className="card-title">{title}</h2>
         <p>
           <span className="card-description"> Description:</span>

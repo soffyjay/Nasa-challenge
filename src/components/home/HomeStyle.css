@@ -1,7 +1,6 @@
 .home {
   max-width: 1600px;
   margin: auto;
-  border: 1px solid pink;
 }
 
 .home-container {
@@ -32,8 +31,11 @@
   margin: auto;
   display: grid;
   gap: 1rem;
-  border: 1px solid red;
   padding: 20px;
+}
+.loading {
+  color: #fff;
+  font-size: 22px;
 }
 @media (min-width: 600px) {
   .movie-list {

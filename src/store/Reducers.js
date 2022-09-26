@@ -6,6 +6,7 @@ const defaultState = {
   error: false,
 };
 
+//Reducers for picture of the day, all movies and single movie
 export const picture = (state = defaultState, action) => {
   switch (action.type) {
     case actions.FETCH_PICTURE_REQUEST:
