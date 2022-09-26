@@ -1,25 +1,54 @@
 .home {
-  width: 1600px;
+  max-width: 1600px;
   margin: auto;
+  border: 1px solid pink;
 }
 
 .home-container {
-  width: 95%;
-  margin: auto;
+  width: 100%;
 }
 
 .picture-of-day {
-  max-width: 100%;
+  max-width: 1600px;
   height: auto;
+  margin: auto;
+}
+.picture-of-day img {
+  width: 100%;
+}
+.picture-title {
+  text-align: center;
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  color: rgb(142, 202, 230);
+  font-size: 20px;
+}
+.nasa {
+  color: rgb(255, 183, 3);
+  font-size: 20px;
+}
+.movie-list {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+  border: 1px solid red;
+  padding: 20px;
+}
+@media (min-width: 600px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
-  max-width: 100%;
-  flex: 1;
-  overflow: hidden;
-  border: 1px solid red;
+@media (min-width: 900px) and (min-width: 1190px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

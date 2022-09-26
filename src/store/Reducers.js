@@ -38,7 +38,7 @@ export const singleMovie = (state = defaultState, action) => {
     case actions.FETCH_SINGLE_MOVIE_REQUEST:
       return { ...state, error: false, loading: true };
     case actions.FETCH_SINGLE_MOVIE_SUCCESS:
-      return { ...state, loading: false, data: action.data?.data };
+      return { ...state, loading: false, data: action.data };
     case actions.FETCH_SINGLE_MOVIE_FAILURE:
       return { ...state, error: action.error };
 

@@ -46,7 +46,7 @@ const fetchSingleMovieRequest = () => {
 
 const fetchSingleMovieSuccess = (data) => {
   return {
-    type: actions.FETCH_MOVIES,
+    type: actions.FETCH_SINGLE_MOVIE_SUCCESS,
     data,
   };
 };
@@ -85,7 +85,7 @@ export const fetchSingleMovie = (id) => {
   return (dispatch) => {
     dispatch(fetchSingleMovieRequest());
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_NASA_API_KEY}`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => dispatch(fetchSingleMovieSuccess(data)))

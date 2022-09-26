@@ -7,9 +7,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/Card";
 import "./HomeStyle.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchMovies());
@@ -19,17 +21,23 @@ const Home = () => {
   const movieData = useSelector((state) => state.movies.data);
   const pictureOfDay = useSelector((state) => state.picture.data);
 
-  console.log(movieData);
+  const fetchCardDetails = (id) => {
+    dispatch(fetchSingleMovie(id));
+
+    navigate(`/card/${id}`);
+  };
+
   return (
     <div className="home">
       <header className="picture-of-day">
         <div>
-          <h1>NASA: Picture of the Day</h1>
+          <h1 className="picture-title">
+            <span className="nasa">NASA: </span>Picture of the Day
+          </h1>
           {/* <h2>{new Date()}</h2> */}
         </div>
-        <div>
-          <img src={pictureOfDay?.hdurl} />
-        </div>
+
+        <img src={pictureOfDay?.hdurl} />
       </header>
       <div className="home-container">
         <div className="movie-list">
@@ -43,6 +51,9 @@ const Home = () => {
                 image={
                   "https://image.tmdb.org/t/p/original//" + movie.poster_path
                 }
+                onClick={() => fetchCardDetails(movie.id)}
+                id={movie.id}
+                key={movie.id}
               />
             ))}
         </div>
